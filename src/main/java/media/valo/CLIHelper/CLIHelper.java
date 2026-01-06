@@ -148,7 +148,7 @@ public class CLIHelper {
         // Last line: same as the first.
         output.add(output.get(1));
         // Finally convert the List back to a String and return it.
-        return arrayToString(output.toArray(new String[output.size()]));
+        return arrayToString(output.toArray(new String[0]));
 
     }
 
