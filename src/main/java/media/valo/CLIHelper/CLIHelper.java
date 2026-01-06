@@ -131,8 +131,8 @@ public class CLIHelper {
         String[] text = stringToArray(input);
         List<String> output = new ArrayList<String>();
         // Iterate over all lines to find the longest one, this one dictates the width of the frame.
-        for (int i = 0; i < text.length; i++) {
-            width = Math.max(width, text[i].length());
+        for (String s : text) {
+            width = Math.max(width, s.length());
         }
         // Newline before the frame for better optics
         output.add("");
@@ -141,8 +141,8 @@ public class CLIHelper {
         output.add(printNTimes(Character.toString(frame), width + 4));
         // Every line gets writen from text to output with framecharacters pre- and appended
         // if the line is shorter than the width extra spacing to the frame gets added.
-        for (int i = 0; i < text.length; i++) {
-            output.add(frame + " " + text[i] + " " + printNTimes(" ", width - text[i].length())
+        for (String s : text) {
+            output.add(frame + " " + s + " " + printNTimes(" ", width - s.length())
                     + frame);
         }
         // Last line: same as the first.
@@ -198,8 +198,8 @@ public class CLIHelper {
         // This will produce a String with a trailing newline.
         // Restoration of the original String is not possible,
         // because stringToArray simply strips trailing newlines for easier formatting.
-        for (int i = 0; i < input.length; i++) {
-            output += input[i];
+        for (String s : input) {
+            output += s;
             output += "\n";
         }
         return output;
