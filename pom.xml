@@ -29,7 +29,7 @@
 
     <groupId>media.valo</groupId>
     <artifactId>CLIHelper</artifactId>
-    <version>1.2</version>
+    <version>2.0.0-alpha.1</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
