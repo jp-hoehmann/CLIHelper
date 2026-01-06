@@ -174,16 +174,16 @@ public class CLIHelper {
      */
     public static String arrayToString(String[] input) {
 
-        String output = "";
+        StringBuilder output = new StringBuilder();
         // Iterate over the array and append each line including a line feed to the output.
         // This will produce a String with a trailing newline.
         // Restoration of the original String is not possible,
         // because stringToArray simply strips trailing newlines for easier formatting.
         for (String s : input) {
-            output += s;
-            output += "\n";
+            output.append(s);
+            output.append("\n");
         }
-        return output;
+        return output.toString();
 
     }
 
