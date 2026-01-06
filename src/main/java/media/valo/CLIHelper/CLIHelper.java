@@ -138,12 +138,11 @@ public class CLIHelper {
         output.add("");
         // First line is the framechracter repeated as width times
         // plus four extra times for spacing to the sides.
-        output.add(printNTimes(Character.toString(frame), width + 4));
+        output.add(Character.toString(frame).repeat(width + 4));
         // Every line gets writen from text to output with framecharacters pre- and appended
         // if the line is shorter than the width extra spacing to the frame gets added.
         for (String s : text) {
-            output.add(frame + " " + s + " " + printNTimes(" ", width - s.length())
-                    + frame);
+            output.add(frame + " " + s + " " + " ".repeat(width - s.length()) + frame);
         }
         // Last line: same as the first.
         output.add(output.get(1));
@@ -161,12 +160,8 @@ public class CLIHelper {
      */
     public static String printNTimes(String input, int n) {
 
-        String output = "";
         // Print the input String n times into output.
-        for (int i = 0; i < n; i++) {
-            output += input;
-        }
-        return output;
+        return String.valueOf(input).repeat(Math.max(0, n));
 
     }
 
@@ -219,7 +214,7 @@ public class CLIHelper {
         String[] text = stringToArray(input);
         // Simply iterate from start to end and append the given number of spaces
         for (int i = start; i < text.length; i++) {
-            text[i] = printNTimes(" ", depth) + text[i];
+            text[i] = " ".repeat(depth) + text[i];
         }
         return arrayToString(text);
 
