@@ -430,7 +430,7 @@ public class CLIHelper {
             System.out.println(text);
             scanner.next();
         }
-        boolean answer = scanner.hasNext(positive) ? true : false;
+        boolean answer = scanner.hasNext(positive);
         scanner.next();
         return answer;
 
