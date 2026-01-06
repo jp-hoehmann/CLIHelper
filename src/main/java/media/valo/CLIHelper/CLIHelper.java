@@ -152,20 +152,6 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method for easily printing a String multiple times into a single line.
-     *
-     * @param   input   String to be printed.
-     * @param   n       Times the String is to be printed.
-     * @return  The input String repeated n times.
-     */
-    public static String printNTimes(String input, int n) {
-
-        // Print the input String n times into output.
-        return String.valueOf(input).repeat(Math.max(0, n));
-
-    }
-
-    /**
      * Helper method used to convert a multiline String into an Array of singleline Strings.
      *
      * @param   input   Multiline String to be turned into an Array.
