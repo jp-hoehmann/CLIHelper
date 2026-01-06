@@ -129,7 +129,7 @@ public class CLIHelper {
 
         int width = 0;
         String[] text = stringToArray(input);
-        List<String> output = new ArrayList<String>();
+        List<String> output = new ArrayList<>();
         // Iterate over all lines to find the longest one, this one dictates the width of the frame.
         for (String s : text) {
             width = Math.max(width, s.length());
