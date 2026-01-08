@@ -79,12 +79,12 @@ public class CLIHelper {
     public final String notUnderstood;
 
     /**
-     * Pattern used to find out if an answer is positive.
+     * {@link Pattern} used to find out if an answer is positive.
      */
     public final Pattern positive;
 
     /**
-     * Pattern used to find out if an answer is negative.
+     * {@link Pattern} used to find out if an answer is negative.
      */
     public final Pattern negative;
 
@@ -119,14 +119,14 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method for easily drawing an ASCII-Art frame around a String.
+     * Helper method for easily drawing an ASCII-Art frame around a {@link String}.
      *
-     * Multiline Strings are allowed.
+     * Multiline {@link String}s are allowed.
      *
      * @param   input   The text to print out in a frame.
      * @param   frame   The Character used for the frame.
      *
-     * @return  The new String.
+     * @return  The new {@link String}.
      */
     public static String frame(String input, char frame) {
 
@@ -157,11 +157,11 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method used to convert a multiline String into an Array of single-line Strings.
+     * Helper method used to convert a multiline {@link String} into an Array of single-line Strings.
      *
-     * @param   input   Multiline String to be turned into an Array.
+     * @param   input   Multiline {@link String} to be turned into an Array.
      *
-     * @return  An Array of Strings with each String representing a single line.
+     * @return  An Array of {@link String}s with each {@link String} representing a single line.
      */
     public static String[] stringToArray(String input) {
 
@@ -173,11 +173,11 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method used to convert an Array of Strings into one multiline String.
+     * Helper method used to convert an Array of {@link String}s into one multiline {@link String}.
      *
-     * @param   input   The Array of Strings to be converted.
+     * @param   input   The Array of {@link String}s to be converted.
      *
-     * @return  The converted String.
+     * @return  The converted {@link String}.
      */
     public static String arrayToString(String[] input) {
 
@@ -326,7 +326,7 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a string from stdin.
+     * Reads a {@link String} from stdin.
      *
      * @param   text    Question the user is asked.
      *
@@ -340,14 +340,14 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a BigDecimal from stdin.
+     * Reads a {@link BigDecimal} from stdin.
      *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a BigDecimal.
+     * @return  The users response as a {@link BigDecimal}.
      */
     public BigDecimal askBigDecimal(String text, String notUnderstood) {
 
@@ -362,13 +362,13 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a BigDecimal from stdin.
+     * Reads a {@link BigDecimal} from stdin.
      *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a BigDecimal.
+     * @return  The users response as a {@link BigDecimal}.
      */
     public BigDecimal askBigDecimal(String text) {
 
@@ -377,14 +377,14 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a BigInteger from stdin.
+     * Reads a {@link BigInteger} from stdin.
      *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a BigInteger.
+     * @return  The users response as a {@link BigInteger}.
      */
     public BigInteger askBigInteger(String text, String notUnderstood) {
 
@@ -399,13 +399,13 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a BigInteger from stdin.
+     * Reads a {@link BigInteger} from stdin.
      *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a BigInteger.
+     * @return  The users response as a {@link BigInteger}.
      */
     public BigInteger askBigInteger(String text) {
 

@@ -85,9 +85,9 @@ public class CLIHelperBuilder {
     }
 
     /**
-     * Builds the CLIHelper.
+     * Builds the {@link CLIHelper}.
      *
-     * @return  The CLIHelper.
+     * @return  The {@link CLIHelper}.
      */
     public CLIHelper build() {
 
@@ -101,7 +101,7 @@ public class CLIHelperBuilder {
      *
      * @param   infoFrame  The character to use.
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder infoFrame(char infoFrame) {
 
@@ -115,7 +115,7 @@ public class CLIHelperBuilder {
      *
      * @param   errFrame   The character to use.
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder errFrame(char errFrame) {
 
@@ -129,7 +129,7 @@ public class CLIHelperBuilder {
      *
      * @param   warnFrame  The character to use.
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder warnFrame(char warnFrame) {
 
@@ -143,7 +143,7 @@ public class CLIHelperBuilder {
      *
      * @param   notUnderstood  The text to print.
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder notUnderstood(String notUnderstood) {
 
@@ -159,7 +159,7 @@ public class CLIHelperBuilder {
      *
      * @param   positive   The Pattern to use.
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder positive(Pattern positive) {
 
@@ -169,7 +169,7 @@ public class CLIHelperBuilder {
     }
 
     /**
-     * Sets the Pattern used to determine whether an answer is positive.
+     * Sets the {@link Pattern} used to determine whether an answer is positive.
      *
      * Using a regex string.
      *
@@ -177,13 +177,13 @@ public class CLIHelperBuilder {
      *      <b>
      *          Important note: <br/>
      *      </b>
-     *      This method sets the regex i-flag to make the Pattern case-insensitive, if this is not wanted, you have to
-     *      use this with an existing pattern.
+     *      This method sets the regex i-flag to make the {@link Pattern} case-insensitive, if this is not wanted, you
+     *      have to use this with an existing pattern.
      *  </p>
      *
-     * @param   positive   The regex for the Pattern to use. The i-flag will be set!
+     * @param   positive   The regex for the {@link Pattern} to use. The i-flag will be set!
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder positive(String positive) {
 
@@ -192,13 +192,13 @@ public class CLIHelperBuilder {
     }
 
     /**
-     * Sets the Pattern used to determine whether an answer is negative.
+     * Sets the {@link Pattern} used to determine whether an answer is negative.
      *
-     * Using an existing Pattern.
+     * Using an existing {@link Pattern}.
      *
-     * @param   negative   The Pattern to use.
+     * @param   negative   The {@link Pattern} to use.
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder negative(Pattern negative) {
 
@@ -208,7 +208,7 @@ public class CLIHelperBuilder {
     }
 
     /**
-     * Sets the Pattern used to determine whether an answer is negative.
+     * Sets the {@link Pattern} used to determine whether an answer is negative.
      *
      * Using a regex string.
      *
@@ -216,13 +216,13 @@ public class CLIHelperBuilder {
      *      <b>
      *          Important note: <br/>
      *      </b>
-     *      This method sets the regex i-flag to make the Pattern case-insensitive, if this is not wanted, you have to
-     *      use this with an existing pattern.
+     *      This method sets the regex i-flag to make the {@link Pattern} case-insensitive, if this is not wanted, you
+     *      have to use this with an existing pattern.
      *  </p>
      *
-     * @param   negative   The regex for the Pattern to use. The i-flag will be set!
+     * @param   negative   The regex for the {@link Pattern} to use. The i-flag will be set!
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder negative(String negative) {
 
@@ -235,7 +235,7 @@ public class CLIHelperBuilder {
      *
      * @param   infoHead    The heading to use.
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder infoHead(String infoHead) {
 
@@ -249,7 +249,7 @@ public class CLIHelperBuilder {
      *
      * @param   errHead    The heading to use.
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder errHead(String errHead) {
 
@@ -263,7 +263,7 @@ public class CLIHelperBuilder {
      *
      * @param   warnHead    The heading to use.
      *
-     * @return  The CLIHelperBuilder it was invoked on, for method chaining purposes.
+     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
      */
     public CLIHelperBuilder warnHead(String warnHead) {
 
