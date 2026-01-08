@@ -48,7 +48,7 @@ public class CLIHelperBuilder {
     private char warnFrame = '%';
 
     /**
-     * Default heading used when printing an inforamtion.
+     * Default heading used when printing an informational message.
      */
     private String infoHead = "INFO";
 
@@ -97,7 +97,7 @@ public class CLIHelperBuilder {
     }
 
     /**
-     * Sets the character used for ASCII-Art frames, when the content is informative.
+     * Sets the character used for ASCII-Art frames when the content is informative.
      *
      * @param   infoFrame  The character to use.
      *
@@ -111,7 +111,7 @@ public class CLIHelperBuilder {
     }
 
     /**
-     * Sets the character used for ASCII-Art frames, when the content is an error.
+     * Sets the character used for ASCII-Art frames when the content is an error.
      *
      * @param   errFrame   The character to use.
      *
@@ -175,8 +175,8 @@ public class CLIHelperBuilder {
      *      <b>
      *          Important note: <br/>
      *      </b>
-     *      This method sets the regex i-flag in order to make the Pattern case-insensitive,
-     *      if this is not wanted you have to use this with an existing pattern.
+     *      This method sets the regex i-flag to make the Pattern case-insensitive, if this is not wanted, you have to
+     *      use this with an existing pattern.
      *  </p>
      *
      * @param   positive   The regex for the Pattern to use. The i-flag will be set!
@@ -212,8 +212,8 @@ public class CLIHelperBuilder {
      *      <b>
      *          Important note: <br/>
      *      </b>
-     *      This method sets the regex i-flag in order to make the Pattern case-insensitive,
-     *      if this is not wanted you have to use this with an existing pattern.
+     *      This method sets the regex i-flag to make the Pattern case-insensitive, if this is not wanted, you have to
+     *      use this with an existing pattern.
      *  </p>
      *
      * @param   negative   The regex for the Pattern to use. The i-flag will be set!
@@ -227,7 +227,7 @@ public class CLIHelperBuilder {
     }
 
     /**
-     * Sets the default heading used when an info is printed out.
+     * Sets the default heading used when an informational message is printed out.
      *
      * @param   infoHead    The heading to use.
      *

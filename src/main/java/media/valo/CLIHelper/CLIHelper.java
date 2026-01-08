@@ -38,7 +38,7 @@ import java.math.BigInteger;
 public class CLIHelper {
 
     /**
-     * The scanner used to read the users input.
+     * The scanner used to read the user's input.
      */
     public final Scanner scanner = new Scanner(System.in);
 
@@ -58,7 +58,7 @@ public class CLIHelper {
     public final char warnFrame;
 
     /**
-     * Default heading used when printing an information.
+     * Default heading used when printing an informational message.
      */
     public final String infoHead;
 
@@ -93,7 +93,7 @@ public class CLIHelper {
      * @param   infoFrame       Character to use for ASCII-art frames with informative content.
      * @param   errFrame        Character to use for ASCII-art frames with error content.
      * @param   warnFrame       Character to use for ASCII-art frames with warning content.
-     * @param   infoHead        Default heading used when printing an information.
+     * @param   infoHead        Default heading used when printing an informational message.
      * @param   errHead         Default heading used when printing an error.
      * @param   warnHead        Default heading used when printing a warning.
      * @param   notUnderstood   Default message output if the users input could not be parsed.
@@ -136,26 +136,28 @@ public class CLIHelper {
         }
         // Newline before the frame for better optics
         output.add("");
-        // First line is the framechracter repeated as width times
-        // plus four extra times for spacing to the sides.
+
+        // The first line is the framechracter repeated as width times plus four extra times for spacing to the sides.
         output.add(Character.toString(frame).repeat(width + 4));
-        // Every line gets writen from text to output with framecharacters pre- and appended
-        // if the line is shorter than the width extra spacing to the frame gets added.
+
+        // Every line gets written from text to output with frame characters pre- and appended. If the line is shorter
+        // than the width, extra spacing to the frame gets added.
         for (String s : text) {
             output.add(frame + " " + s + " " + " ".repeat(width - s.length()) + frame);
         }
         // Last line: same as the first.
         output.add(output.get(1));
-        // Finally convert the List back to a String and return it.
+
+        // Finally, convert the List back to a String and return it.
         return arrayToString(output.toArray(new String[0]));
 
     }
 
     /**
-     * Helper method used to convert a multiline String into an Array of singleline Strings.
+     * Helper method used to convert a multiline String into an Array of single-line Strings.
      *
      * @param   input   Multiline String to be turned into an Array.
-     * @return  An Array of Strings with each String representating a single line.
+     * @return  An Array of Strings with each String representing a single line.
      */
     public static String[] stringToArray(String input) {
 
@@ -207,18 +209,19 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method used to quickformat a text to a given keyword.<br/>
-     * I do not know how to describe this exact behaviour,
-     * if you do not know what this does just try it :)
+     * Helper method used to quickformat a text to a given keyword.
+     *
+     * I do not know how to describe this exact behavior, if you do not know what this does, just try it :)
      *
      * @param   input   The text.
-     * @param   keyword The keyword, should not contain line breaks.
+     * @param   keyword The keyword. Should not contain line breaks.
      * @return  The formatted text.
      */
     public static String format(String input, String keyword) {
 
         String[] text = stringToArray(input);
-        // First line is the keyword folowed by colon and space.
+
+        // The first line is the keyword followed by colon and space.
         text[0] = keyword + ": " + text[0];
         // From the second line on it is just an indentation.
         return indent(arrayToString(text), keyword.length() + 2, 1);
@@ -226,7 +229,8 @@ public class CLIHelper {
     }
 
     /**
-     * Used for framed outputting of genaral information.
+     * Used for framed outputting of general information.
+     *
      * Uses no heading.
      *
      * @param   info    Text to output.
@@ -289,7 +293,7 @@ public class CLIHelper {
     /**
      * Print out a warning.
      *
-     * @param   warning Warning to issue, can have multiple lines.
+     * @param   warning Warning to issue. Can have multiple lines.
      */
     public void warn(String warning) {
 
@@ -301,7 +305,7 @@ public class CLIHelper {
      * Print out a warning.
      * With a given heading.
      *
-     * @param   warning Warning to issue, can have multiple lines.
+     * @param   warning Warning to issue. Can have multiple lines.
      * @param   head    Heading to use.
      */
     public void warn(String warning, String head) {
@@ -315,7 +319,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response.
+     * @return  The user's response.
      */
     public String askString(String text) {
 
