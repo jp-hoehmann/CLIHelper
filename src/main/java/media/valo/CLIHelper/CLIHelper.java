@@ -33,8 +33,6 @@ import java.math.BigInteger;
  * Helper for using the command line interface.
  *
  * @author      Jean-Pierre Hoehmann <jeanpierre.hoehmann@gmail.com>
- *
- * @version     1.2, 2015-01-05
  */
 public class CLIHelper {
 
