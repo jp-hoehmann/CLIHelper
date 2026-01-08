@@ -33,6 +33,7 @@ import java.math.BigInteger;
  * Helper for using the command line interface.
  *
  * @author      Jean-Pierre Hoehmann <jeanpierre.hoehmann@gmail.com>
+ *
  * @version     1.2, 2015-01-05
  */
 public class CLIHelper {
@@ -118,11 +119,13 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method for easily drawing an ASCII-Art frame around a String.<br/>
+     * Helper method for easily drawing an ASCII-Art frame around a String.
+     *
      * Multiline Strings are allowed.
      *
      * @param   input   The text to print out in a frame.
      * @param   frame   The Character used for the frame.
+     *
      * @return  The new String.
      */
     public static String frame(String input, char frame) {
@@ -157,6 +160,7 @@ public class CLIHelper {
      * Helper method used to convert a multiline String into an Array of single-line Strings.
      *
      * @param   input   Multiline String to be turned into an Array.
+     *
      * @return  An Array of Strings with each String representing a single line.
      */
     public static String[] stringToArray(String input) {
@@ -172,6 +176,7 @@ public class CLIHelper {
      * Helper method used to convert an Array of Strings into one multiline String.
      *
      * @param   input   The Array of Strings to be converted.
+     *
      * @return  The converted String.
      */
     public static String arrayToString(String[] input) {
@@ -195,6 +200,7 @@ public class CLIHelper {
      * @param   input   The text to be indented.
      * @param   depth   Depth of the indentation.
      * @param   start   Number of lines after which the indentation should start.
+     *
      * @return  The text with indentation.
      */
     public static String indent(String input, int depth, int start) {
@@ -215,6 +221,7 @@ public class CLIHelper {
      *
      * @param   input   The text.
      * @param   keyword The keyword. Should not contain line breaks.
+     *
      * @return  The formatted text.
      */
     public static String format(String input, String keyword) {
@@ -243,6 +250,7 @@ public class CLIHelper {
 
     /**
      * Used for framed outputting of general information.
+     *
      * Uses a given heading.
      *
      * @param   info    Text to output.
@@ -256,6 +264,7 @@ public class CLIHelper {
 
     /**
      * Used for framed outputting of general information.
+     *
      * Uses the default heading.
      *
      * @param   info    Text to output.
@@ -279,6 +288,7 @@ public class CLIHelper {
 
     /**
      * Print out an error.
+     *
      * With a given heading.
      *
      * @param   error   Error to print out to error out.
@@ -303,6 +313,7 @@ public class CLIHelper {
 
     /**
      * Print out a warning.
+     *
      * With a given heading.
      *
      * @param   warning Warning to issue. Can have multiple lines.
@@ -330,6 +341,7 @@ public class CLIHelper {
 
     /**
      * Reads a BigDecimal from stdin.
+     *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
@@ -351,6 +363,7 @@ public class CLIHelper {
 
     /**
      * Reads a BigDecimal from stdin.
+     *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
@@ -365,6 +378,7 @@ public class CLIHelper {
 
     /**
      * Reads a BigInteger from stdin.
+     *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
@@ -386,6 +400,7 @@ public class CLIHelper {
 
     /**
      * Reads a BigInteger from stdin.
+     *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
@@ -400,6 +415,7 @@ public class CLIHelper {
 
     /**
      * Reads a boolean from stdin.
+     *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
@@ -423,6 +439,7 @@ public class CLIHelper {
 
     /**
      * Reads a boolean from stdin.
+     *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
@@ -437,6 +454,7 @@ public class CLIHelper {
 
     /**
      * Reads a byte from stdin.
+     *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
@@ -458,6 +476,7 @@ public class CLIHelper {
 
     /**
      * Reads a byte from stdin.
+     *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
@@ -472,6 +491,7 @@ public class CLIHelper {
 
     /**
      * Reads a double from stdin.
+     *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
@@ -493,6 +513,7 @@ public class CLIHelper {
 
     /**
      * Reads a double from stdin.
+     *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
@@ -507,6 +528,7 @@ public class CLIHelper {
 
     /**
      * Reads a float from stdin.
+     *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
@@ -528,6 +550,7 @@ public class CLIHelper {
 
     /**
      * Reads a float from stdin.
+     *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
@@ -542,6 +565,7 @@ public class CLIHelper {
 
     /**
      * Reads an int from stdin.
+     *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
@@ -563,6 +587,7 @@ public class CLIHelper {
 
     /**
      * Reads an int from stdin.
+     *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
@@ -577,6 +602,7 @@ public class CLIHelper {
 
     /**
      * Reads a long from stdin.
+     *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
@@ -598,6 +624,7 @@ public class CLIHelper {
 
     /**
      * Reads a long from stdin.
+     *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
@@ -612,6 +639,7 @@ public class CLIHelper {
 
     /**
      * Reads a short from stdin.
+     *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
@@ -633,6 +661,7 @@ public class CLIHelper {
 
     /**
      * Reads a short from stdin.
+     *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.

@@ -154,6 +154,7 @@ public class CLIHelperBuilder {
 
     /**
      * Sets the Pattern used to determine whether an answer is positive.
+     *
      * Using an existing Pattern.
      *
      * @param   positive   The Pattern to use.
@@ -169,6 +170,7 @@ public class CLIHelperBuilder {
 
     /**
      * Sets the Pattern used to determine whether an answer is positive.
+     *
      * Using a regex string.
      *
      *  <p>
@@ -191,6 +193,7 @@ public class CLIHelperBuilder {
 
     /**
      * Sets the Pattern used to determine whether an answer is negative.
+     *
      * Using an existing Pattern.
      *
      * @param   negative   The Pattern to use.
@@ -206,6 +209,7 @@ public class CLIHelperBuilder {
 
     /**
      * Sets the Pattern used to determine whether an answer is negative.
+     *
      * Using a regex string.
      *
      *  <p>
