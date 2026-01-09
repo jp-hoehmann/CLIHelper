@@ -62,7 +62,7 @@ public class CLIHelperBuilder {
     private String warnHead = "WARN";
 
     /**
-     * Text output if the users input was not understood.
+     * Text output if the user's input was not understood.
      */
     private String notUnderstood = "I did not understand that, please try again.";
 
@@ -138,7 +138,7 @@ public class CLIHelperBuilder {
     }
 
     /**
-     * Sets the default text to print out if the users answer was not understood.
+     * Sets the default text to print out if the user's answer was not understood.
      *
      * @param   notUnderstood  The text to print.
      *

@@ -72,7 +72,7 @@ public class CLIHelper {
     public final String warnHead;
 
     /**
-     * Text output if the users input was not understood.
+     * Text output if the user's input was not understood.
      */
     public final String notUnderstood;
 
@@ -95,7 +95,7 @@ public class CLIHelper {
      * @param   infoHead        Default heading used when printing an informational message.
      * @param   errHead         Default heading used when printing an error.
      * @param   warnHead        Default heading used when printing a warning.
-     * @param   notUnderstood   Default message output if the users input could not be parsed.
+     * @param   notUnderstood   Default message output if the user's input could not be parsed.
      * @param   positive        Pattern used to determine whether an answer is positive.
      * @param   negative        Pattern used to determine whether an answer is negative.
      */
@@ -155,11 +155,11 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method used to convert a multiline {@link String} into an Array of single-line Strings.
+     * Helper method used to convert a multiline {@link String} into an array of single-line Strings.
      *
-     * @param   input   Multiline {@link String} to be turned into an Array.
+     * @param   input   Multiline {@link String} to be turned into an array.
      *
-     * @return  An Array of {@link String}s with each {@link String} representing a single line.
+     * @return  An array of {@link String}s with each {@link String} representing a single line.
      */
     public static String[] stringToArray(String input) {
 
@@ -171,9 +171,9 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method used to convert an Array of {@link String}s into one multiline {@link String}.
+     * Helper method used to convert an array of {@link String}s into one multiline {@link String}.
      *
-     * @param   input   The Array of {@link String}s to be converted.
+     * @param   input   The array of {@link String}s to be converted.
      *
      * @return  The converted {@link String}.
      */
@@ -345,7 +345,7 @@ public class CLIHelper {
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a {@link BigDecimal}.
+     * @return  The user's response as a {@link BigDecimal}.
      */
     public BigDecimal askBigDecimal(String text, String notUnderstood) {
 
@@ -366,7 +366,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a {@link BigDecimal}.
+     * @return  The user's response as a {@link BigDecimal}.
      */
     public BigDecimal askBigDecimal(String text) {
 
@@ -382,7 +382,7 @@ public class CLIHelper {
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a {@link BigInteger}.
+     * @return  The user's response as a {@link BigInteger}.
      */
     public BigInteger askBigInteger(String text, String notUnderstood) {
 
@@ -403,7 +403,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a {@link BigInteger}.
+     * @return  The user's response as a {@link BigInteger}.
      */
     public BigInteger askBigInteger(String text) {
 
@@ -419,7 +419,7 @@ public class CLIHelper {
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a boolean.
+     * @return  The user's response as a boolean.
      */
     public boolean askBool(String text, String notUnderstood) {
 
@@ -442,7 +442,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a boolean.
+     * @return  The user's response as a boolean.
      */
     public boolean askBool(String text) {
 
@@ -458,7 +458,7 @@ public class CLIHelper {
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a byte.
+     * @return  The user's response as a byte.
      */
     public byte askByte(String text, String notUnderstood) {
 
@@ -479,7 +479,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a byte.
+     * @return  The user's response as a byte.
      */
     public byte askByte(String text) {
 
@@ -495,7 +495,7 @@ public class CLIHelper {
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a double.
+     * @return  The user's response as a double.
      */
     public double askDouble(String text, String notUnderstood) {
 
@@ -516,7 +516,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a double.
+     * @return  The user's response as a double.
      */
     public double askDouble(String text) {
 
@@ -532,7 +532,7 @@ public class CLIHelper {
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a float.
+     * @return  The user's response as a float.
      */
     public float askFloat(String text, String notUnderstood) {
 
@@ -553,7 +553,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a float.
+     * @return  The user's response as a float.
      */
     public float askFloat(String text) {
 
@@ -569,7 +569,7 @@ public class CLIHelper {
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as an int.
+     * @return  The user's response as an int.
      */
     public int askInt(String text, String notUnderstood) {
 
@@ -590,7 +590,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as an int.
+     * @return  The user's response as an int.
      */
     public int askInt(String text) {
 
@@ -606,7 +606,7 @@ public class CLIHelper {
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a long.
+     * @return  The user's response as a long.
      */
     public long askLong(String text, String notUnderstood) {
 
@@ -627,7 +627,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a long.
+     * @return  The user's response as a long.
      */
     public long askLong(String text) {
 
@@ -643,7 +643,7 @@ public class CLIHelper {
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The users response as a short.
+     * @return  The user's response as a short.
      */
     public short askShort(String text, String notUnderstood) {
 
@@ -664,7 +664,7 @@ public class CLIHelper {
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The users response as a short.
+     * @return  The user's response as a short.
      */
     public short askShort(String text) {
 
