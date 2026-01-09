@@ -166,29 +166,6 @@ public class CLIHelperBuilder {
     }
 
     /**
-     * Sets the {@link Pattern} used to determine whether an answer is positive.
-     *
-     * Using a regex string.
-     *
-     *  <p>
-     *      <b>
-     *          Important note: <br/>
-     *      </b>
-     *      This method sets the regex i-flag to make the {@link Pattern} case-insensitive, if this is not wanted, you
-     *      have to use this with an existing pattern.
-     *  </p>
-     *
-     * @param   positive   The regex for the {@link Pattern} to use. The i-flag will be set!
-     *
-     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
-     */
-    public CLIHelperBuilder positive(String positive) {
-
-        return positive(Pattern.compile(positive, Pattern.CASE_INSENSITIVE));
-
-    }
-
-    /**
      * Sets the {@link Pattern} used to determine whether an answer is negative.
      *
      * Using an existing {@link Pattern}.
@@ -201,29 +178,6 @@ public class CLIHelperBuilder {
 
         this.negative = negative;
         return this;
-
-    }
-
-    /**
-     * Sets the {@link Pattern} used to determine whether an answer is negative.
-     *
-     * Using a regex string.
-     *
-     *  <p>
-     *      <b>
-     *          Important note: <br/>
-     *      </b>
-     *      This method sets the regex i-flag to make the {@link Pattern} case-insensitive, if this is not wanted, you
-     *      have to use this with an existing pattern.
-     *  </p>
-     *
-     * @param   negative   The regex for the {@link Pattern} to use. The i-flag will be set!
-     *
-     * @return  The {@link CLIHelperBuilder} it was invoked on, for method chaining purposes.
-     */
-    public CLIHelperBuilder negative(String negative) {
-
-        return negative(Pattern.compile(negative, Pattern.CASE_INSENSITIVE));
 
     }
 
