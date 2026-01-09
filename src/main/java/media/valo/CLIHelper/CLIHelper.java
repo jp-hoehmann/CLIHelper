@@ -159,7 +159,7 @@ public class CLIHelper {
      *
      * @return  An array of {@link String}s with each {@link String} representing a single line.
      */
-    public static String[] stringToArray(String input) {
+    private static String[] stringToArray(String input) {
 
         // Simply split the input String at all the newlines.
         // Two Backslashes here because of Regex.
@@ -175,7 +175,7 @@ public class CLIHelper {
      *
      * @return  The converted {@link String}.
      */
-    public static String arrayToString(String[] input) {
+    private static String arrayToString(String[] input) {
 
         StringBuilder output = new StringBuilder();
         // Iterate over the array and append each line including a line feed to the output.
@@ -199,7 +199,7 @@ public class CLIHelper {
      *
      * @return  The text with indentation.
      */
-    public static String indent(String input, int depth, int start) {
+    private static String indent(String input, int depth, int start) {
 
         String[] text = stringToArray(input);
         // Simply iterate from start to end and append the given number of spaces
@@ -220,7 +220,7 @@ public class CLIHelper {
      *
      * @return  The formatted text.
      */
-    public static String format(String input, String keyword) {
+    private static String format(String input, String keyword) {
 
         String[] text = stringToArray(input);
 
