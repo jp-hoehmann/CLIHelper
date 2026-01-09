@@ -31,8 +31,6 @@ import java.math.BigInteger;
 
 /**
  * Helper for using the command line interface.
- *
- * @author      Jean-Pierre Hoehmann <jeanpierre.hoehmann@gmail.com>
  */
 public class CLIHelper {
 

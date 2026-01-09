@@ -26,8 +26,6 @@ import java.util.regex.Pattern;
 
 /**
  * Builder for the CLIHelper class.
- *
- * @author      Jean-Pierre Hoehmann <jeanpierre.hoehmann@gmail.de>
  */
 public class CLIHelperBuilder {
 
