@@ -153,44 +153,6 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method used to convert a multiline {@link String} into an array of single-line Strings.
-     *
-     * @param   input   Multiline {@link String} to be turned into an array.
-     *
-     * @return  An array of {@link String}s with each {@link String} representing a single line.
-     */
-    private static String[] stringToArray(String input) {
-
-        // Simply split the input String at all the newlines.
-        // Two Backslashes here because of Regex.
-        // This version of split automatically removes the trailing empty String.
-        return input.split("\\n");
-
-    }
-
-    /**
-     * Helper method used to convert an array of {@link String}s into one multiline {@link String}.
-     *
-     * @param   input   The array of {@link String}s to be converted.
-     *
-     * @return  The converted {@link String}.
-     */
-    private static String arrayToString(String[] input) {
-
-        StringBuilder output = new StringBuilder();
-        // Iterate over the array and append each line including a line feed to the output.
-        // This will produce a String with a trailing newline.
-        // Restoration of the original String is not possible,
-        // because stringToArray simply strips trailing newlines for easier formatting.
-        for (String s : input) {
-            output.append(s);
-            output.append("\n");
-        }
-        return output.toString();
-
-    }
-
-    /**
      * Indent text to a given depth.
      *
      * @param   input   The text to be indented.
@@ -207,27 +169,6 @@ public class CLIHelper {
             text[i] = " ".repeat(depth) + text[i];
         }
         return arrayToString(text);
-
-    }
-
-    /**
-     * Helper method used to quickformat a text to a given keyword.
-     *
-     * I do not know how to describe this exact behavior, if you do not know what this does, just try it :)
-     *
-     * @param   input   The text.
-     * @param   keyword The keyword. Should not contain line breaks.
-     *
-     * @return  The formatted text.
-     */
-    private static String format(String input, String keyword) {
-
-        String[] text = stringToArray(input);
-
-        // The first line is the keyword followed by colon and space.
-        text[0] = keyword + ": " + text[0];
-        // From the second line on it is just an indentation.
-        return indent(arrayToString(text), keyword.length() + 2, 1);
 
     }
 
@@ -667,6 +608,65 @@ public class CLIHelper {
     public short askShort(String text) {
 
         return askShort(text, notUnderstood);
+
+    }
+
+    /**
+     * Helper method used to convert a multiline {@link String} into an array of single-line Strings.
+     *
+     * @param   input   Multiline {@link String} to be turned into an array.
+     *
+     * @return  An array of {@link String}s with each {@link String} representing a single line.
+     */
+    private static String[] stringToArray(String input) {
+
+        // Simply split the input String at all the newlines.
+        // Two Backslashes here because of Regex.
+        // This version of split automatically removes the trailing empty String.
+        return input.split("\\n");
+
+    }
+
+    /**
+     * Helper method used to convert an array of {@link String}s into one multiline {@link String}.
+     *
+     * @param   input   The array of {@link String}s to be converted.
+     *
+     * @return  The converted {@link String}.
+     */
+    private static String arrayToString(String[] input) {
+
+        StringBuilder output = new StringBuilder();
+        // Iterate over the array and append each line including a line feed to the output.
+        // This will produce a String with a trailing newline.
+        // Restoration of the original String is not possible,
+        // because stringToArray simply strips trailing newlines for easier formatting.
+        for (String s : input) {
+            output.append(s);
+            output.append("\n");
+        }
+        return output.toString();
+
+    }
+
+    /**
+     * Helper method used to quickformat a text to a given keyword.
+     *
+     * I do not know how to describe this exact behavior, if you do not know what this does, just try it :)
+     *
+     * @param   input   The text.
+     * @param   keyword The keyword. Should not contain line breaks.
+     *
+     * @return  The formatted text.
+     */
+    private static String format(String input, String keyword) {
+
+        String[] text = stringToArray(input);
+
+        // The first line is the keyword followed by colon and space.
+        text[0] = keyword + ": " + text[0];
+        // From the second line on it is just an indentation.
+        return indent(arrayToString(text), keyword.length() + 2, 1);
 
     }
 
