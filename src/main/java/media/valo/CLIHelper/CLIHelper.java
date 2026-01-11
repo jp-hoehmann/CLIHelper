@@ -191,7 +191,7 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method used to indent text.
+     * Indent text to a given depth.
      *
      * @param   input   The text to be indented.
      * @param   depth   Depth of the indentation.
@@ -199,7 +199,7 @@ public class CLIHelper {
      *
      * @return  The text with indentation.
      */
-    private static String indent(String input, int depth, int start) {
+    public static String indent(String input, int depth, int start) {
 
         String[] text = stringToArray(input);
         // Simply iterate from start to end and append the given number of spaces
