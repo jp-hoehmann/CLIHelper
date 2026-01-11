@@ -115,7 +115,7 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method for easily drawing an ASCII-Art frame around a {@link String}.
+     * Method for easily drawing an ASCII-Art frame around a {@link String}.
      *
      * Multiline {@link String}s are allowed.
      *
