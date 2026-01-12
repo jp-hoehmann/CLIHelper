@@ -115,14 +115,14 @@ public class CLIHelper {
     }
 
     /**
-     * Method for easily drawing an ASCII-Art frame around a {@link String}.
+     * Method for easily drawing an ASCII-Art frame around a {@code String}.
      *
-     * Multiline {@link String}s are allowed.
+     * Multiline {@code String}s are allowed.
      *
      * @param   input   The text to print out in a frame.
      * @param   frame   The Character used for the frame.
      *
-     * @return  The new {@link String}.
+     * @return  The new {@code String}.
      */
     public static String frame(String input, char frame) {
 
@@ -263,7 +263,7 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a {@link String} from stdin.
+     * Reads a {@code String} from {@code System.in}.
      *
      * @param   text    Question the user is asked.
      *
@@ -277,7 +277,7 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a {@link BigDecimal} from stdin.
+     * Reads a {@link BigDecimal} from {@code System.in}.
      *
      * Outputs a specified text if the input could not be parsed.
      *
@@ -299,7 +299,7 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a {@link BigDecimal} from stdin.
+     * Reads a {@link BigDecimal} from {@code System.in}.
      *
      * Outputs the default message if the input could not be parsed.
      *
@@ -314,7 +314,7 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a {@link BigInteger} from stdin.
+     * Reads a {@link BigInteger} from {@code System.in}.
      *
      * Outputs a specified text if the input could not be parsed.
      *
@@ -336,7 +336,7 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a {@link BigInteger} from stdin.
+     * Reads a {@link BigInteger} from {@code System.in}.
      *
      * Outputs the default message if the input could not be parsed.
      *
@@ -351,14 +351,14 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a boolean from stdin.
+     * Reads a {@code boolean} from {@code System.in}.
      *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The user's response as a boolean.
+     * @return  The user's response as a {@code boolean}.
      */
     public boolean askBool(String text, String notUnderstood) {
 
@@ -375,13 +375,13 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a boolean from stdin.
+     * Reads a {@code boolean} from {@code System.in}.
      *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The user's response as a boolean.
+     * @return  The user's response as a {@code boolean}.
      */
     public boolean askBool(String text) {
 
@@ -390,14 +390,14 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a byte from stdin.
+     * Reads a {@code byte} from {@code System.in}.
      *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The user's response as a byte.
+     * @return  The user's response as a {@code byte}.
      */
     public byte askByte(String text, String notUnderstood) {
 
@@ -412,13 +412,13 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a byte from stdin.
+     * Reads a {@code byte} from {@code System.in}.
      *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The user's response as a byte.
+     * @return  The user's response as a {@code byte}.
      */
     public byte askByte(String text) {
 
@@ -427,14 +427,14 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a double from stdin.
+     * Reads a {@code double} from {@code System.in}.
      *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The user's response as a double.
+     * @return  The user's response as a {@code double}.
      */
     public double askDouble(String text, String notUnderstood) {
 
@@ -449,13 +449,13 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a double from stdin.
+     * Reads a {@code double} from {@code System.in}.
      *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The user's response as a double.
+     * @return  The user's response as a {@code double}.
      */
     public double askDouble(String text) {
 
@@ -464,14 +464,14 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a float from stdin.
+     * Reads a {@code float} from {@code System.in}.
      *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The user's response as a float.
+     * @return  The user's response as a {@code float}.
      */
     public float askFloat(String text, String notUnderstood) {
 
@@ -486,13 +486,13 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a float from stdin.
+     * Reads a {@code float} from {@code System.in}.
      *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The user's response as a float.
+     * @return  The user's response as a {@code float}.
      */
     public float askFloat(String text) {
 
@@ -501,14 +501,14 @@ public class CLIHelper {
     }
 
     /**
-     * Reads an int from stdin.
+     * Reads an {@code int} from {@code System.in}.
      *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The user's response as an int.
+     * @return  The user's response as an {@code int}.
      */
     public int askInt(String text, String notUnderstood) {
 
@@ -523,13 +523,13 @@ public class CLIHelper {
     }
 
     /**
-     * Reads an int from stdin.
+     * Reads an {@code int} from {@code System.in}.
      *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The user's response as an int.
+     * @return  The user's response as an {@code int}.
      */
     public int askInt(String text) {
 
@@ -538,14 +538,14 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a long from stdin.
+     * Reads a {@code long} from {@code System.in}.
      *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The user's response as a long.
+     * @return  The user's response as a {@code long}.
      */
     public long askLong(String text, String notUnderstood) {
 
@@ -560,13 +560,13 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a long from stdin.
+     * Reads a {@code long} from {@code System.in}.
      *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The user's response as a long.
+     * @return  The user's response as a {@code long}.
      */
     public long askLong(String text) {
 
@@ -575,14 +575,14 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a short from stdin.
+     * Reads a {@code short} from {@code System.in}.
      *
      * Outputs a specified text if the input could not be parsed.
      *
      * @param   text            Question the user is asked.
      * @param   notUnderstood   Text which is output if the input could not be parsed.
      *
-     * @return  The user's response as a short.
+     * @return  The user's response as a {@code short}.
      */
     public short askShort(String text, String notUnderstood) {
 
@@ -597,13 +597,13 @@ public class CLIHelper {
     }
 
     /**
-     * Reads a short from stdin.
+     * Reads a {@code short} from {@code System.in}.
      *
      * Outputs the default message if the input could not be parsed.
      *
      * @param   text    Question the user is asked.
      *
-     * @return  The user's response as a short.
+     * @return  The user's response as a {@code short}.
      */
     public short askShort(String text) {
 
@@ -612,11 +612,11 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method used to convert a multiline {@link String} into an array of single-line Strings.
+     * Helper method used to convert a multiline {@code String} into an array of single-line Strings.
      *
-     * @param   input   Multiline {@link String} to be turned into an array.
+     * @param   input   Multiline {@code String} to be turned into an array.
      *
-     * @return  An array of {@link String}s with each {@link String} representing a single line.
+     * @return  An array of {@code String}s with each {@code String} representing a single line.
      */
     private static String[] stringToArray(String input) {
 
@@ -628,11 +628,11 @@ public class CLIHelper {
     }
 
     /**
-     * Helper method used to convert an array of {@link String}s into one multiline {@link String}.
+     * Helper method used to convert an array of {@code String}s into one multiline {@code String}.
      *
-     * @param   input   The array of {@link String}s to be converted.
+     * @param   input   The array of {@code String}s to be converted.
      *
-     * @return  The converted {@link String}.
+     * @return  The converted {@code String}.
      */
     private static String arrayToString(String[] input) {
 
