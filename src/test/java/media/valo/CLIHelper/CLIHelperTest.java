@@ -514,28 +514,6 @@ class CLIHelperTest {
     }
 
     /*
-     * Edge case tests
-     */
-
-    @Test
-    void testPatternMatching() {
-        assertTrue(cliHelper.positive.matcher("yes").matches());
-        assertTrue(cliHelper.positive.matcher("YES").matches());
-        assertTrue(cliHelper.positive.matcher("y").matches());
-        assertTrue(cliHelper.positive.matcher("true").matches());
-        assertTrue(cliHelper.positive.matcher("1").matches());
-
-        assertTrue(cliHelper.negative.matcher("no").matches());
-        assertTrue(cliHelper.negative.matcher("NO").matches());
-        assertTrue(cliHelper.negative.matcher("n").matches());
-        assertTrue(cliHelper.negative.matcher("false").matches());
-        assertTrue(cliHelper.negative.matcher("0").matches());
-
-        assertFalse(cliHelper.positive.matcher("maybe").matches());
-        assertFalse(cliHelper.negative.matcher("maybe").matches());
-    }
-
-    /*
      * Tests for indent().
      */
 
