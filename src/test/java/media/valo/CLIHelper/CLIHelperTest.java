@@ -354,14 +354,84 @@ class CLIHelperTest {
         assertTrue(cliHelper.positive.matcher("y").matches());
         assertTrue(cliHelper.positive.matcher("true").matches());
         assertTrue(cliHelper.positive.matcher("1").matches());
-        
+
         assertTrue(cliHelper.negative.matcher("no").matches());
         assertTrue(cliHelper.negative.matcher("NO").matches());
         assertTrue(cliHelper.negative.matcher("n").matches());
         assertTrue(cliHelper.negative.matcher("false").matches());
         assertTrue(cliHelper.negative.matcher("0").matches());
-        
+
         assertFalse(cliHelper.positive.matcher("maybe").matches());
         assertFalse(cliHelper.negative.matcher("maybe").matches());
     }
+
+    /*
+     * Tests for indent().
+     */
+
+    @Test
+    void testIndentSingleLine() {
+        String input = "Hello";
+        String result = CLIHelper.indent(input, 4, 0);
+        assertEquals("    Hello\n", result);
+    }
+
+    @Test
+    void testIndentMultipleLines() {
+        String input = "Line 1\nLine 2\nLine 3";
+        String result = CLIHelper.indent(input, 4, 0);
+        assertEquals("    Line 1\n    Line 2\n    Line 3\n", result);
+    }
+
+    @Test
+    void testIndentStartFromSecondLine() {
+        String input = "Line 1\nLine 2\nLine 3";
+        String result = CLIHelper.indent(input, 4, 1);
+        assertEquals("Line 1\n    Line 2\n    Line 3\n", result);
+    }
+
+    @Test
+    void testIndentStartFromThirdLine() {
+        String input = "Line 1\nLine 2\nLine 3\nLine 4";
+        String result = CLIHelper.indent(input, 2, 2);
+        assertEquals("Line 1\nLine 2\n  Line 3\n  Line 4\n", result);
+    }
+
+    @Test
+    void testIndentZeroDepth() {
+        String input = "Line 1\nLine 2";
+        String result = CLIHelper.indent(input, 0, 0);
+        assertEquals("Line 1\nLine 2\n", result);
+    }
+
+    @Test
+    void testIndentEmptyString() {
+        String input = "";
+        String result = CLIHelper.indent(input, 4, 0);
+        assertEquals("    \n", result);
+    }
+
+    @Test
+    void testIndentLargeDepth() {
+        String input = "Text";
+        String result = CLIHelper.indent(input, 10, 0);
+        assertEquals("          Text\n", result);
+    }
+
+    @Test
+    void testIndentStartBeyondLines() {
+        String input = "Line 1\nLine 2";
+        // Start indenting from line 5, but there are only 2 lines
+        String result = CLIHelper.indent(input, 4, 5);
+        // Should not modify anything since start is beyond the array length
+        assertEquals("Line 1\nLine 2\n", result);
+    }
+
+    @Test
+    void testIndentWithExistingIndentation() {
+        String input = "  Already indented\n    More indented";
+        String result = CLIHelper.indent(input, 2, 0);
+        assertEquals("    Already indented\n      More indented\n", result);
+    }
+    
 }
