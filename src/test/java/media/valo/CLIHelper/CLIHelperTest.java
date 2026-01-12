@@ -52,10 +52,15 @@ class CLIHelperTest {
         Pattern negative = Pattern.compile("(?i)^(n|no|false|0)$");
         
         cliHelper = new CLIHelper(
-            '#', '!', '?',
-            "INFO", "ERROR", "WARNING",
-            "I did not understand that.",
-            positive, negative
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "I did not understand that.",
+                positive,
+                negative
         );
 
         // Redirect output streams for testing
@@ -72,7 +77,10 @@ class CLIHelperTest {
         System.setIn(originalIn);
     }
 
-    // Constructor tests
+    /*
+     * Constructor tests
+     */
+
     @Test
     void testConstructor() {
         assertEquals('#', cliHelper.infoFrame);
@@ -87,7 +95,10 @@ class CLIHelperTest {
         assertNotNull(cliHelper.scanner);
     }
 
-    // Frame tests
+    /*
+     * Tests for frame().
+     */
+
     @Test
     void testFrameSingleLine() {
         String result = CLIHelper.frame("Hello", '*');
@@ -105,6 +116,7 @@ class CLIHelperTest {
     @Test
     void testFrameWithDifferentLengths() {
         String result = CLIHelper.frame("Hi\nLonger line", '#');
+
         // The frame should be sized to the longest line
         assertTrue(result.contains("# Hi          #"));
         assertTrue(result.contains("# Longer line #"));
@@ -117,7 +129,10 @@ class CLIHelperTest {
         assertTrue(result.contains("*  *"));
     }
 
-    // Print methods tests
+    /*
+     * Tests for print().
+     */
+
     @Test
     void testPrint() {
         cliHelper.print("Test message");
@@ -173,163 +188,10 @@ class CLIHelperTest {
         assertTrue(output.contains("???"));
     }
 
-    // askString tests
-    @Test
-    void testAskString() {
-        String input = "test input" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        String result = helper.askString("Enter text:");
-        assertEquals("test input", result);
-    }
+    /*
+     * Tests for info().
+     */
 
-    // askInt tests
-    @Test
-    void testAskIntValid() {
-        String input = "42" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        int result = helper.askInt("Enter number:");
-        assertEquals(42, result);
-    }
-
-    @Test
-    void testAskIntWithRetry() {
-        String input = "invalid" + System.lineSeparator() + "42" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        int result = helper.askInt("Enter number:", "Try again");
-        assertEquals(42, result);
-    }
-
-    // askBool tests
-    @Test
-    void testAskBoolYes() {
-        String input = "yes" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("(?i)^(y|yes|true|1)$"), 
-                Pattern.compile("(?i)^(n|no|false|0)$"));
-        
-        boolean result = helper.askBool("Confirm:");
-        assertTrue(result);
-    }
-
-    @Test
-    void testAskBoolNo() {
-        String input = "no" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("(?i)^(y|yes|true|1)$"), 
-                Pattern.compile("(?i)^(n|no|false|0)$"));
-        
-        boolean result = helper.askBool("Confirm:");
-        assertFalse(result);
-    }
-
-    @Test
-    void testAskBoolCaseInsensitive() {
-        String input = "Y" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("(?i)^(y|yes|true|1)$"),
-                Pattern.compile("(?i)^(n|no|false|0)$"));
-
-        boolean result = helper.askBool("Confirm:");
-        assertTrue(result);
-    }
-
-    // askByte tests
-    @Test
-    void testAskByteValid() {
-        String input = "127" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        byte result = helper.askByte("Enter byte:");
-        assertEquals(127, result);
-    }
-
-    // askShort tests
-    @Test
-    void testAskShortValid() {
-        String input = "32767" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        short result = helper.askShort("Enter short:");
-        assertEquals(32767, result);
-    }
-
-    // askLong tests
-    @Test
-    void testAskLongValid() {
-        String input = "9223372036854775807" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        long result = helper.askLong("Enter long:");
-        assertEquals(9223372036854775807L, result);
-    }
-
-    // askFloat tests
-    @Test
-    void testAskFloatValid() {
-        String input = "3.14" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        float result = helper.askFloat("Enter float:");
-        assertEquals(3.14f, result, 0.001);
-    }
-
-    // askDouble tests
-    @Test
-    void testAskDoubleValid() {
-        String input = "3.141592653589793" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        double result = helper.askDouble("Enter double:");
-        assertEquals(3.141592653589793, result, 0.0000000000001);
-    }
-
-    // askBigInteger tests
-    @Test
-    void testAskBigIntegerValid() {
-        String input = "123456789012345678901234567890" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        BigInteger result = helper.askBigInteger("Enter big integer:");
-        assertEquals(new BigInteger("123456789012345678901234567890"), result);
-    }
-
-    // askBigDecimal tests
-    @Test
-    void testAskBigDecimalValid() {
-        String input = "123456.789" + System.lineSeparator();
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        CLIHelper helper = new CLIHelper('#', '!', '?', "INFO", "ERROR", "WARNING",
-                "Not understood", Pattern.compile("yes"), Pattern.compile("no"));
-        
-        BigDecimal result = helper.askBigDecimal("Enter big decimal:");
-        assertEquals(new BigDecimal("123456.789"), result);
-    }
-
-    // Edge case tests
     @Test
     void testMultilineInfoFormatting() {
         cliHelper.info("Line 1\nLine 2\nLine 3");
@@ -339,6 +201,10 @@ class CLIHelperTest {
         assertTrue(output.contains("      Line 3"));
     }
 
+    /*
+     * Tests for err().
+     */
+
     @Test
     void testMultilineErrorFormatting() {
         cliHelper.err("Error line 1\nError line 2");
@@ -346,6 +212,310 @@ class CLIHelperTest {
         assertTrue(output.contains("ERROR: Error line 1"));
         assertTrue(output.contains("       Error line 2"));
     }
+
+    /*
+     * Tests for askString().
+     */
+
+    @Test
+    void testAskString() {
+        String input = "test input" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+        
+        String result = helper.askString("Enter text:");
+        assertEquals("test input", result);
+    }
+
+    /*
+     * Tests for askInt().
+     */
+
+    @Test
+    void testAskIntValid() {
+        String input = "42" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        int result = helper.askInt("Enter number:");
+        assertEquals(42, result);
+    }
+
+    @Test
+    void testAskIntWithRetry() {
+        String input = "invalid" + System.lineSeparator() + "42" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        int result = helper.askInt("Enter number:", "Try again");
+        assertEquals(42, result);
+    }
+
+    /*
+     * Tests for askBool().
+     */
+
+    @Test
+    void testAskBoolYes() {
+        String input = "yes" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        boolean result = helper.askBool("Confirm:");
+        assertTrue(result);
+    }
+
+    @Test
+    void testAskBoolNo() {
+        String input = "no" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        boolean result = helper.askBool("Confirm:");
+        assertFalse(result);
+    }
+
+    @Test
+    void testAskBoolCaseInsensitive() {
+        String input = "Y" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("(?i)^(y|yes|true|1)$"),
+                Pattern.compile("(?i)^(n|no|false|0)$")
+        );
+
+        boolean result = helper.askBool("Confirm:");
+        assertTrue(result);
+    }
+
+    /*
+     * Tests for askByte().
+     */
+
+    @Test
+    void testAskByteValid() {
+        String input = "127" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        byte result = helper.askByte("Enter byte:");
+        assertEquals(127, result);
+    }
+
+    /*
+     * Tests for askShort().
+     */
+
+    @Test
+    void testAskShortValid() {
+        String input = "32767" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        short result = helper.askShort("Enter short:");
+        assertEquals(32767, result);
+    }
+
+    /*
+     * Tests for askLong().
+     */
+
+    @Test
+    void testAskLongValid() {
+        String input = "9223372036854775807" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        long result = helper.askLong("Enter long:");
+        assertEquals(9223372036854775807L, result);
+    }
+
+    /*
+     * Tests for askFloat().
+     */
+
+    @Test
+    void testAskFloatValid() {
+        String input = "3.14" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        float result = helper.askFloat("Enter float:");
+        assertEquals(3.14f, result, 0.001);
+    }
+
+    /*
+     * Tests for askDouble().
+     */
+
+    @Test
+    void testAskDoubleValid() {
+        String input = "3.141592653589793" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        double result = helper.askDouble("Enter double:");
+        assertEquals(3.141592653589793, result, 0.0000000000001);
+    }
+
+    /*
+     * Tests for askBigInteger().
+     */
+
+    @Test
+    void testAskBigIntegerValid() {
+        String input = "123456789012345678901234567890" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        BigInteger result = helper.askBigInteger("Enter big integer:");
+        assertEquals(new BigInteger("123456789012345678901234567890"), result);
+    }
+
+    /*
+     * Tests for askBigDecimal().
+     */
+
+    @Test
+    void testAskBigDecimalValid() {
+        String input = "123456.789" + System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        CLIHelper helper = new CLIHelper(
+                '#',
+                '!',
+                '?',
+                "INFO",
+                "ERROR",
+                "WARNING",
+                "Not understood",
+                Pattern.compile("yes"),
+                Pattern.compile("no")
+        );
+
+        BigDecimal result = helper.askBigDecimal("Enter big decimal:");
+        assertEquals(new BigDecimal("123456.789"), result);
+    }
+
+    /*
+     * Edge case tests
+     */
 
     @Test
     void testPatternMatching() {
@@ -421,8 +591,10 @@ class CLIHelperTest {
     @Test
     void testIndentStartBeyondLines() {
         String input = "Line 1\nLine 2";
+
         // Start indenting from line 5, but there are only 2 lines
         String result = CLIHelper.indent(input, 4, 5);
+
         // Should not modify anything since start is beyond the array length
         assertEquals("Line 1\nLine 2\n", result);
     }
@@ -433,5 +605,5 @@ class CLIHelperTest {
         String result = CLIHelper.indent(input, 2, 0);
         assertEquals("    Already indented\n      More indented\n", result);
     }
-    
+
 }
